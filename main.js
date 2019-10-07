@@ -14,7 +14,10 @@
  *         - username : 返信ツイートしたユーザー名(文字列。ユーザー名は自由につけて良い)
  *         - text : ツイート内容(文字列。ツイート内容は自由に作って良い。)
  */
-
+let tweets = [
+    {username: "あああああ", text: "コメント１", replies: [{username: "いいいいい", text: "りぷらい１"}, {username: "ううううう", text: "りぷらい２"}]},
+    {username: "かかかかか", text: "コメント２０", replies: [{username: "ききききき", text: "りぷらい２１"}, {username: "くくくくく", text: "りぷらい２２"}]}
+    ];
 
 /**
  * 課題2: 課題1で作ったtweetsの内容を全て表示する
@@ -24,3 +27,14 @@
  *     - replies
  *       - repliesの内容もforEachを使って全て表示する
  */
+tweets.forEach((tweet) => {
+    console.log("Tweet=======================")
+    console.log(" User: ", tweet.username);
+    console.log(" Text: ", tweet.text);
+    tweet.replies.forEach((replie, index) => {
+        console.log(`   Replie${index}**********************`)
+        console.log("       User: ", replie.username);
+        console.log("       Text: ", replie.text);
+    });
+    console.log("");
+});
